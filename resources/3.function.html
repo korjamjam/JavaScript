@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function</title>
+    <title>Funtion</title>
 </head>
 <body>
     <script>
         function test(){
-            console.log("test함수");
-            console.log(this);
+            console.log("test함수")
+            console.log(this)
         }
+        test();
 
         const test2 = function(){
             console.log("test2함수")
-            console.log(this);
+            console.log(this)
         }
 
-        const test3 = () =>{
-            console.log("test3 함수")
-            console.log(this);
+        test2();
+
+        const test3 = () => {
+            console.log("test3함수")
+            console.log(this)
         }
+        test3();
+
     </script>
-    
 </body>
 </html>
