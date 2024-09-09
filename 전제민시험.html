@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 문제</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+     }
+     #area{
+        height: 100px;
+        width: 90%;
+        box-sizing: border-box;
+        resize:none;
+     }
+     #area2{
+        width: 90%;
+        box-sizing: border-box;
+     }
+
+    fieldset div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    b {
+        width: 10%;
+        text-align: center;
+    }
+
+    .btn1 {
+        position: relative;
+        left: 100px;
+     }
+
+    /* 표 배경 */
+    .tr1{
+        background: rgb(255, 167, 135);
+        color: white;
+    }
+    .tdcolor{
+        background: rgb(239, 243, 203);
+    }
+
+    /* 바로가기 버튼을 표 크기에 맞추기 */
+    input[type="button"] {
+        width: 100%;           /* 자동 크기 */
+        padding: 5px 10px;     /* 텍스트 양옆 여백 */
+        box-sizing: border-box; /* padding 포함 크기 계산 */
+    }
+    </style>
+</head>
+<body>
+    
+    <h1>포트폴리오 문제</h1>
+    <div class="container">
+        <form action="insert.no" method ="post">
+            <fieldset>
+                <legend>공지사항 작성하기</legend>
+                <div>
+                    <b>제목</b>
+                    <input type="text" name ="title" placeholder="제목을 입력하시오." id="area2">
+                </div>
+                <div>
+                    <b>내용</b>
+                    <textarea name="content" id="area" placeholder="내용을 입력하시오."></textarea>
+                </div>
+                <div>
+                    <b>첨부파일</b>
+                    <input type="submit" value="파일 선택" name="uploadFile">선택된 파일 없음
+                </div>
+                <div class="btn1">
+                    <button>작성하기</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <hr>
+
+    <table border ="1" width="100%">
+        <tr class="tr1">
+            <td width="5%" style="text-align: center;">번호</td>
+            <td width="50%" colspan="2" style="text-align: center;">제목</td>
+            <td width="12%" style="text-align: center;">작성자</td>
+            <td width="13%" style="text-align: center;">작성일</td>
+            <td width="10%" style="text-align: center;">조회수</td>
+        </tr>
+        <tr class="tdcolor">
+            <td>9</td>
+            <td width="50%">공지사항 제목9</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>user01</td>
+            <td>2021-03-29</td>
+            <td>34</td>
+        </tr>
+        <tr class="tdcolor">
+            <td>6</td>
+            <td>공지사항 제목6</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>answ445</td>
+            <td>2021-03-12</td>
+            <td>67</td>
+        </tr>
+        <tr class="tdcolor">
+            <td>3</td>
+            <td>공지사항 제목3</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>testg12</td>
+            <td>2021-03-01</td>
+            <td>98</td>
+        </tr>
+        <tr class="tdcolor">
+            <td>2</td>
+            <td>공지사항 제목2</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>palwe3</td>
+            <td>2021-01-02</td>
+            <td>85</td>
+        </tr>
+        <tr class="tdcolor">
+            <td>1</td>
+            <td>공지사항 제목1</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>xml23</td>
+            <td>2021-12-24</td>
+            <td>124</td>
+        </tr>
+
+        <tr class="tr1">
+            <td colspan="4" style="text-align: center;">전체공지사항 갯수</td>
+            <td colspan="2" style="text-align: center;">5개</td>
+        </tr>
+    </table>
+
+</body>
+</html>

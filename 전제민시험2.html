@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+        }
+        p{
+            position: relative;
+            left: auto;
+        }
+
+        .container {
+            background-color: #ececec;
+            padding: 20px;
+            border: 2px solid rgb(226, 226, 226);
+            width: 70%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .group-array {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .group-array b {
+            width: 20%;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-left: 10px;
+            border: 0px 0px 1px 0px;
+            border-style: none none dashed none;
+            background-color: #ececec;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #b2d8b4;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
+
+        .passError {
+            color: red;
+            font-size: 12px;
+            text-align: right;
+        }
+
+        .passInfo {
+            text-align: right;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="signupForm">
+            <div class="group-array">
+                <b>아이디</b>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="passError" id="usernameError"></div>
+
+            <div class="group-array">
+                <b>패스워드</b>
+                <input type="password" id="password" name="password">
+            </div>
+            <p>영문자 대/소문자 특수문자, 숫자 포함 8~32자</p>
+            <div class="passError" id="passwordError"></div>
+
+            <div class="group-array">
+                <b>패스워드 확인</b>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+            </div>
+            <div class="passError" id="confirmPasswordError"></div>
+
+            <div class="group-array">
+                <b>이메일</b>
+                <input type="text" id="email" name="email" style="width: 50%;">@
+                <input type="text" id="emailDomain" name="emailDomain" style="width: 40%;">
+            </div>
+            <div class="passError" id="emailError"></div>
+
+            <div class="group-array">
+                <b>주소</b>
+                <input type="text" id="address" name="address">
+            </div>
+
+            <button type="submit"><b>가 입</b></button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const passwordInput = document.getElementById("password");
+            const form = document.getElementById("signupForm");
+
+            passwordInput.addEventListener("focus", function() {
+                const infoMessage = document.getElementById("messageInfo");
+                infoMessage.style.display = "block";
+            });
+
+            form.addEventListener("submit", function(event) {
+                let value = true;
+
+                const username = document.getElementById("username");
+                const password = document.getElementById("password");
+                const confirmPassword = document.getElementById("confirmPassword");
+
+                if (!username.value) {
+                    document.getElementById("usernameError").textContent = "필수 입력 항목 입니다";
+                    value = false;
+                } else {
+                    document.getElementById("usernameError").textContent = "";
+                }
+
+                if (!password.value) {
+                    document.getElementById("passwordError").textContent = "필수 입력 항목 입니다";
+                    value = false;
+                } else {
+                    document.getElementById("passwordError").textContent = "";
+                }
+
+                if (!confirmPassword.value) {
+                    document.getElementById("confirmPasswordError").textContent = "필수 입력 항목 입니다";
+                    value = false;
+                } else {
+                    document.getElementById("confirmPasswordError").textContent = "";
+                }
+
+                if (!value) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
